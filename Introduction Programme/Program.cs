@@ -1,0 +1,68 @@
+﻿using System;
+using System.Threading;
+
+namespace Introduction_Programme
+{
+    public class Program
+    {
+        // Global variables
+        public int Spd = 40;
+
+        public static void Main(string[] args)
+        {
+            Program program = new Program(); // Create an instance of Program
+            Gender gender = new Gender();
+
+            program.Begin();
+            gender.Ask();
+        }
+
+        public void SlowPrint(string text, int delay)
+        {
+            foreach (char c in text)
+            {
+                Console.Write(c);
+                Thread.Sleep(delay);
+            }
+        }
+
+        public void Begin()
+        {
+            string name = "";
+            string introduct = "Welcome to our introduction program. This platform is designed to provide you with insights into our company and to better understand your background and interests. We appreciate your participation as it helps us tailor our services to your needs effectively.\r\n";
+
+            // Begin the program
+            SlowPrint(introduct, Spd);
+            SlowPrint("What is your name?", Spd);
+            name = Console.ReadLine();
+            while (name == "")
+            {
+                SlowPrint("Invalid, please enter your name\n", Spd);
+                name = Console.ReadLine();
+            }
+            SlowPrint($"Hello {name}, nice to meet you.\n", Spd);
+        }
+    }
+
+    public struct GenderOptions
+    {
+        public const string Male = "1. Male";
+        public const string Female = "2. Female";
+        public const string NonBinary = "3. Non-Binary";
+    }
+
+    public class Gender
+    {
+        public void Ask()
+        {
+            string gender_Ask = "What is your gender?\n";
+            string male = GenderOptions.Male + "\n";
+            string female = GenderOptions.Female + "\n";
+            string non_binary = GenderOptions.NonBinary + "\n";
+
+            Program program = new Program(); // Create an instance of Program to access its methods
+            program.SlowPrint(gender_Ask, program.Spd); // Call SlowPrint method from Program class
+            Console.WriteLine($"{male}\n{female}\n{non_binary}");
+        }
+    }
+}
