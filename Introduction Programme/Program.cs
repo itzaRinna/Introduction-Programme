@@ -17,6 +17,11 @@ namespace Introduction_Programme
             gender.Ask();
         }
 
+        public bool IsString(object input)
+        {
+            return input is string;
+        }
+
         public void SlowPrint(string text, int delay)
         {
             foreach (char c in text)
@@ -33,7 +38,7 @@ namespace Introduction_Programme
 
             // Begin the program
             SlowPrint(introduct, Spd);
-            SlowPrint("What is your name?", Spd);
+            SlowPrint("What is your name?\n", Spd);
             name = Console.ReadLine();
             while (name == "")
             {
@@ -55,7 +60,8 @@ namespace Introduction_Programme
     {
         public void Ask()
         {
-            string gender_Ask = "What is your gender?\n";
+            string gender_Ask = "Could you please provide your demographic information regarding gender identity?\n";
+            string gender_Ans = "";
             string male = GenderOptions.Male + "\n";
             string female = GenderOptions.Female + "\n";
             string non_binary = GenderOptions.NonBinary + "\n";
@@ -63,6 +69,28 @@ namespace Introduction_Programme
             Program program = new Program(); // Create an instance of Program to access its methods
             program.SlowPrint(gender_Ask, program.Spd); // Call SlowPrint method from Program class
             Console.WriteLine($"{male}\n{female}\n{non_binary}");
+            gender_Ans = Console.ReadLine();
+            while (gender_Ans == "")
+            {
+                program.SlowPrint("Invalid, please enter your gender", program.Spd);
+                gender_Ans = Console.ReadLine();
+            }
+            if (gender_Ans == "1")
+            {
+                program.SlowPrint("So you are a Male", program.Spd);
+            }
+            else if (gender_Ans == "2")
+            {
+                program.SlowPrint("So you are a Memale", program.Spd);
+            }
+            else if (gender_Ans == "3")
+            {
+                program.SlowPrint("So you are Non-Binary", program.Spd);
+            }
+            else
+            {
+                Console.WriteLine("Sorry you're not in the matrix");
+            }
         }
     }
 }

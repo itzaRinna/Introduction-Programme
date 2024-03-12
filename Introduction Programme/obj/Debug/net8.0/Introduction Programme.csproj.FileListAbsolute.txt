@@ -12,3 +12,4 @@ C:\Users\WINDOWS\source\repos\Introduction Programme\Introduction Programme\obj\
 C:\Users\WINDOWS\source\repos\Introduction Programme\Introduction Programme\obj\Debug\net8.0\Introduction Programme.pdb
 C:\Users\WINDOWS\source\repos\Introduction Programme\Introduction Programme\obj\Debug\net8.0\Introduction Programme.genruntimeconfig.cache
 C:\Users\WINDOWS\source\repos\Introduction Programme\Introduction Programme\obj\Debug\net8.0\ref\Introduction Programme.dll
+C:\Users\WINDOWS\source\repos\Introduction Programme\Introduction Programme\obj\Debug\net8.0\Introduction Programme.sourcelink.json
