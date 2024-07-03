@@ -89,7 +89,7 @@ namespace Introduction_Programme
             }
             else
             {
-                Console.WriteLine("Sorry you're not in the matrix");
+                Console.WriteLine("Sorry you're not in the system!");
             }
         }
     }
